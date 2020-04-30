@@ -1,13 +1,30 @@
 //Third part:
 //all jquery expressions looks like this:
 //$('css selector').action()
+//in js ; is not essential, but can be used
 
 $('h1').text('This is done by <em>JavaScript</em>!'); // because of .text, everything is considered a sigle text
 $('h1').html('This is done by <em>JavaScript</em>!'); // this way I can include HTML
-$('p').css('border', '1px solid red'); //can change any css rules, but have to use the '',
-$('p').css('padding', '5px');
 $('h2').toggleClass('blue'); //because of .toggleClass, it cannot be anything but just a class
 //$('h2').toggleClass('blue'); if there is 2, it will remove it, if 3, applies again
+
+let name = 'Juli';
+let age = 30;
+
+function myLittleFunction() {
+    //any kind of javascript command
+    $('main').append('<p id="">A p is appended in a main</p>'); //padding and border not applied for this if this happens later
+    $('p').css('border', '1px solid red'); //can change any css rules, but have to use the '',
+    $('p').css('padding', '5px');
+}
+
+myLittleFunction();
+myLittleFunction();
+
+$('#add').click(myLittleFunction);
+$('#remove').click(function () {
+    $('p:last-child').remove(); //use pseudo selector to remove only last one
+}); //most often used pattern javascript handling click
 
 console.log('Script file is loaded') //this is a developer tool
 
