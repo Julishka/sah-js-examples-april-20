@@ -1,0 +1,1 @@
+console.log('Script file is loaded') //this is a developer tool
