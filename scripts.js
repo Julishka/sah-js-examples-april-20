@@ -1,4 +1,5 @@
 //Third part:
+
 //all jquery expressions looks like this:
 //$('css selector').action()
 //in js ; is not essential, but can be used
@@ -11,9 +12,18 @@ $('h2').toggleClass('blue'); //because of .toggleClass, it cannot be anything bu
 let name = 'Juli';
 let age = 30;
 
+age = age + 5;
+
 function myLittleFunction() {
-    //any kind of javascript command
-    $('main').append('<p id="">A p is appended in a main</p>'); //padding and border not applied for this if this happens later
+    //any kind of JavaScript command
+    //condition: number of ps is smaler than 5
+    // <, >, <=, >=, ===, !==
+    if ($('p').length === 5) {//== is okay, but === used more frequently; exactly not equal is !==
+        $('main').append('<p id="">A p is appended in a main</p>'); //padding and border not applied for this if this happens later
+    } else {
+        console.log('We reached the maximum paragraph number');
+    }
+    
     $('p').css('border', '1px solid red'); //can change any css rules, but have to use the '',
     $('p').css('padding', '5px');
 }
@@ -25,6 +35,36 @@ $('#add').click(myLittleFunction);
 $('#remove').click(function () {
     $('p:last-child').remove(); //use pseudo selector to remove only last one
 }); //most often used pattern javascript handling click
+
+//Fourth part:
+
+//if (condition that true or false) {
+    //condition is true
+//} else {
+    //condition is false
+//}
+
+let colors = ['paleturquoise', 'turquoise', 'mediumturquoise', 'lightseagreen', 'darkcyan'];
+
+colors.forEach(function (color) {
+    $('#box-container').append('<div class="box"></div>');
+    $('.box:last-child').css('background', color);
+});
+
+for (let i = 0; i < 100; i++) {
+    console.log(i);    
+} //type for and select the second one, the structure will appear
+
+/*$('#box-container').append('<div class="box"></div>')
+$('.box:last-child').css('background', colors[0]);
+$('#box-container').append('<div class="box"></div>')
+$('.box:last-child').css('background', colors[1]);
+$('#box-container').append('<div class="box"></div>')
+$('.box:last-child').css('background', colors[2]);
+$('#box-container').append('<div class="box"></div>')
+$('.box:last-child').css('background', colors[3]);
+$('#box-container').append('<div class="box"></div>')
+$('.box:last-child').css('background', colors[4]);*/
 
 console.log('Script file is loaded') //this is a developer tool
 
